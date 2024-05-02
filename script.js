@@ -22,19 +22,29 @@ const duracaoDescansoLongo = 1000;
 
 botaoIniciar.addEventListener('click',() => {
     html.setAttribute('start-pause', 'app__card-primary-button')
+    
 })
 
 focoBt.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'foco')
+    alterarContexto('foco')
 })
 
 curtoBt.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'descanso-curto')
+    alterarContexto('descanso-curto')
+    
 })
 
 longoBt.addEventListener('click', () => {
-    html.setAttribute ('data-contexto', 'descanso-longo')
+    alterarContexto('descanso-longo')
+
 })
+
+function alterarContexto (contexto) {
+    html.setAttribute('data-contexto', contexto)
+    banner.setAttribute('src',`imagens/${contexto}.png`)
+    titulo.setAttribute('descanso-curto')
+}
+
 
 // Cronometro 
 
@@ -45,5 +55,4 @@ document.querySelector('.app__image');
 document.querySelector('.app__title');
 
 // segundo exercisio 
-
 
